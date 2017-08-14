@@ -5,10 +5,10 @@
     = image_tag user_avatar(@user), class: "user-image", alt: "[@#{@user.username}]"
 
   h2.title-small.buffer-top @#{@user.username}
-  p.text-small.buffer-bottom = user_questions_count(@user)
+  p.text-small.buffer-bottom = t('question', count: @user.questions.size)
 
   .user-ask-button.container.text-center
-    = link_to "Спроси меня", '', class: "button button-light", id: "ask-button"
+    = link_to t('question.askme'), '', class: "button button-light", id: "ask-button"
 
 .user-question-form-div.column-1-4.column-1-4-right id='ask-form'
   .user-question-form.buffer-both
@@ -16,10 +16,10 @@
       = form_for @new_question do |f|
         = f.hidden_field :user_id
         .form-field
-          = f.label :text, "Ваш вопрос для @#{@user.username}", class: "form-label"
+          = f.label :text, "#{t('question.for')} @#{@user.username}", class: "form-label"
           = f.text_area :text, class: "form-textarea"
         .form-action
-          = f.submit "Задать вопрос", class: "button button-green"
+          = f.submit t('question.ask'), class: "button button-green"
 
 .column-3-4
   .user-questions.buffer-both

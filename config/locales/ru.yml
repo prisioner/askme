@@ -1,0 +1,12 @@
+ru:
+  main:
+    title: "Хорошие вопросы"
+    header-title: "Хорошие вопросы"
+  question:
+    one: "%{count} вопрос"
+    few: "%{count} вопроса"
+    many: "%{count} вопросов"
+    other: "%{count} вопросов"
+    ask: "Задать вопрос"
+    askme: "Спроси меня"
+    for: "Ваш вопрос для"

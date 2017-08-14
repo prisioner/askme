@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title Хорошие вопросы
+    title = t('main.title')
 
     meta charset='utf-8'
     = csrf_meta_tags
@@ -13,7 +13,7 @@ html
     .header
       .container
         .header-logo
-          h1.header-title = link_to "Хорошие вопросы", root_path
+          h1.header-title = link_to t('main.header-title'), root_path
 
     .content
       .container
