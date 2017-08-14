@@ -9,6 +9,8 @@ end
 gem 'rails', '~> 5.1.2'
 gem 'sqlite3'
 gem 'puma', '~> 3.7'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'slim-rails'
 
 group :development, :test do
