@@ -17,11 +17,15 @@ class User < ApplicationRecord
   validates :email, format: { with: /\A[^@]+@([^@\.]+\.)+[^@\.]+\Z/ }
 
   # at least 2 characters (maximum = 40)
-  # starts with latin letter
-  # may include non-following underscopes in the middle
-  # may include numbers
   validates :username, length: { in: 2..40 }
-  validates :username, format: { with: /\A[a-z](_?[a-z\d]+)+\Z/, message: 'only latin symbols and underscopes' }
+  # may include only latin letters, numbers and underscopes
+  validates :username, format: { with: /\A[a-z\d_]*\Z/, message: I18n.t('errors.username.format.symbols') }
+  # starts with latin letter
+  validates :username, format: { with: /\A[^_\d]/, message: I18n.t('errors.username.format.underscore_or_digit_on_start') }
+  # ends with latin letter or digit
+  validates :username, format: { with: /[^_]\Z/, message: I18n.t('errors.username.format.underscore_on_end') }
+  # may not include following underscopes
+  validates :username, format: { with: /\A((?!__).)*\Z/, message: I18n.t('errors.username.format.following_underscores') }
 
 
   attr_accessor :password
@@ -33,13 +37,17 @@ class User < ApplicationRecord
   before_validation :prepare_attributes
 
   def prepare_attributes
-    self.username.strip!
-    self.username.downcase!
+    if username.present?
+      username.strip!
+      username.downcase!
+    end
 
-    self.email.strip!
-    self.email.downcase!
+    if email.present?
+      email.strip!
+      email.downcase!
+    end
 
-    self.name.strip! if self.name.present?
+    name.strip! if name.present?
   end
 
   def encrypt_password
