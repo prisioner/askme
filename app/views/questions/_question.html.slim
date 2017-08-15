@@ -8,4 +8,4 @@
         = question.answer if question.answer.present?
 
     .question-date
-      = question.created_at.strftime('%d %b %M:%H')
+      = I18n.l(question.created_at, format: '%d %b %M:%H')
