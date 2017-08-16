@@ -10,8 +10,4 @@ en:
     for: "Your question for"
   errors:
     username:
-      format:
-        underscore_or_digit_on_start: "couldn't start with underscore or digit"
-        underscore_on_end: "couldn't end with underscore"
-        following_underscores: "underscores couldn't follow each other"
-        symbols: "may include only latin letters, digits or underscores"
+      format: "may include only latin letters, digits or underscores"
