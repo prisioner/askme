@@ -18,36 +18,22 @@ class User < ApplicationRecord
 
   # at least 2 characters (maximum = 40)
   validates :username, length: { in: 2..40 }
-  # may include only latin letters, numbers and underscopes
-  validates :username, format: { with: /\A[a-z\d_]*\Z/, message: I18n.t('errors.username.format.symbols') }
-  # starts with latin letter
-  validates :username, format: { with: /\A[^_\d]/, message: I18n.t('errors.username.format.underscore_or_digit_on_start') }
-  # ends with latin letter or digit
-  validates :username, format: { with: /[^_]\Z/, message: I18n.t('errors.username.format.underscore_on_end') }
-  # may not include following underscopes
-  validates :username, format: { with: /\A((?!__).)*\Z/, message: I18n.t('errors.username.format.following_underscores') }
-
+  # may include only latin letters, numbers and underscores
+  validates :username, format: { with: /\A[a-z\d_]*\Z/, message: I18n.t('errors.username.format') }
 
   attr_accessor :password
 
   validates_presence_of :password, on: :create
   validates_confirmation_of :password
 
-  before_save :encrypt_password
+  strip_attributes only: [:username, :name, :email]
   before_validation :prepare_attributes
 
+  before_save :encrypt_password
+
   def prepare_attributes
-    if username.present?
-      username.strip!
-      username.downcase!
-    end
-
-    if email.present?
-      email.strip!
-      email.downcase!
-    end
-
-    name.strip! if name.present?
+    username.downcase! if username.present?
+    email.downcase! if email.present?
   end
 
   def encrypt_password

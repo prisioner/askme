@@ -13,6 +13,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'slim-rails'
 gem 'rails-i18n', '~> 5.0.0'
+gem 'strip_attributes'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
