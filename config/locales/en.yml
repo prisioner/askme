@@ -2,6 +2,10 @@ en:
   main:
     title: "Good questions"
     header-title: "Good questions"
+  pages:
+    users:
+      index:
+        title: "Our users"
   question:
     one: "%{count} question"
     other: "%{count} questions"

@@ -2,6 +2,10 @@ ru:
   main:
     title: "Хорошие вопросы"
     header-title: "Хорошие вопросы"
+  pages:
+    users:
+      index:
+        title: "Наши пользователи"
   question:
     one: "%{count} вопрос"
     few: "%{count} вопроса"
