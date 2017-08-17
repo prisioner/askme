@@ -13,5 +13,6 @@ en:
     askme: "Ask me"
     for: "Your question for"
   errors:
-    username:
-      format: "may include only latin letters, digits or underscores"
+    attributes:
+       username:
+         invalid: "may include only latin letters, digits or underscores"

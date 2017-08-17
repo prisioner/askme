@@ -19,7 +19,7 @@ class User < ApplicationRecord
   # at least 2 characters (maximum = 40)
   validates :username, length: { in: 2..40 }
   # may include only latin letters, numbers and underscores
-  validates :username, format: { with: /\A[a-z\d_]*\Z/, message: I18n.t('errors.username.format') }
+  validates :username, format: { with: /\A[a-z\d_]*\Z/ }
 
   attr_accessor :password
 
