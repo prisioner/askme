@@ -2,9 +2,9 @@
   h1.title-medium = @user.name
 
   .user-image-div
-    = image_tag user_avatar(@user), class: "user-image", alt: "[@#{@user.username}]"
+    = image_tag user_avatar(@user), class: "user-image", alt: user_nickname(@user)
 
-  h2.title-small.buffer-top @#{@user.username}
+  h2.title-small.buffer-top = user_nickname(@user)
   p.text-small.buffer-bottom = t('question', count: @user.questions.size)
 
   .user-ask-button.container.text-center
@@ -16,7 +16,7 @@
       = form_for @new_question do |f|
         = f.hidden_field :user_id
         .form-field
-          = f.label :text, "#{t('question.for')} @#{@user.username}", class: "form-label"
+          = f.label :text, "#{t('question.for')} #{user_nickname(@user)}", class: "form-label"
           = f.text_area :text, class: "form-textarea"
         .form-action
           = f.submit t('question.ask'), class: "button button-green"

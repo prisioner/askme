@@ -6,4 +6,8 @@ module ApplicationHelper
       asset_path 'avatar.jpeg'
     end
   end
+
+  def user_nickname(user)
+    "@#{user.username}"
+  end
 end
