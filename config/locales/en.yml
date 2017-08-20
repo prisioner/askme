@@ -10,14 +10,27 @@ en:
         title: "Join us!"
         user:
           created: 'User successfully registered!'
-          not_created: 'User registration error'
         form:
           email: 'Login (email)'
           username: 'Username'
           name: 'Name'
           password: 'Password'
-          password_confirmation: 'Password confirmation'
+          password_confirmation: 'Confirm password'
           register: 'Register now'
+      edit:
+        title: "Edit profile"
+        user:
+          saved: 'Your profile successfully updated!'
+        password_change: 'Leave fields blank to keep your current password'
+        form:
+          username: 'Username'
+          name: 'Your name'
+          avatar_url: 'Avatar URL'
+          password: 'New password'
+          password_confirmation: 'Confirm new password'
+          save: 'Save'
+  user:
+    edit: "Edit profile"
   question:
     one: "%{count} question"
     other: "%{count} questions"

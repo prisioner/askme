@@ -1,2 +1,37 @@
-h1 Users#edit
-p Find me in app/views/users/edit.html.slim
+.container.content-wrapper.buffer-both
+  h1.title-medium = t('pages.users.edit.title')
+
+  .column-1-2
+    .form
+      = form_for @user do |f|
+
+        - if @user.errors.any?
+          .form-errors
+            ul
+              - for message in @user.errors.full_messages
+                li.form-error-message = message
+
+        .form-field
+          = f.label :username, t('pages.users.edit.form.username'), class: 'form-label'
+          = f.text_field :username, class: 'form-text-field'
+
+        .form-field
+          = f.label :name, t('pages.users.edit.form.name'), class: 'form-label'
+          = f.text_field :name, class: 'form-text-field'
+
+        .form-field
+          = f.label :avatar_url, t('pages.users.edit.form.avatar_url'), class: 'form-label'
+          = f.text_field :avatar_url, class: 'form-text-field'
+
+        .buffer-top-large.buffer-bottom = t('pages.users.edit.password_change')
+
+        .form-field
+          = f.label :password, t('pages.users.edit.form.password'), class: 'form-label'
+          = f.password_field :password, class: 'form-text-field'
+
+        .form-field
+          = f.label :password_confirmation, t('pages.users.edit.form.password_confirmation'), class: 'form-label'
+          = f.password_field :password_confirmation, class: 'form-text-field'
+
+        .form-action
+          = f.submit t('pages.users.edit.form.save'), class: 'button button-small button-dark'

@@ -10,7 +10,6 @@ ru:
         title: "Присоединяйся к нам!"
         user:
           created: 'Пользователь успешно зарегистрирован!'
-          not_created: 'Ошибка регистрации пользователя'
         form:
           email: 'Логин (email)'
           username: 'Никнейм'
@@ -18,6 +17,20 @@ ru:
           password: 'Пароль'
           password_confirmation: 'Пароль ещё раз'
           register: 'Зарегистрироваться'
+      edit:
+        title: "Править профиль"
+        user:
+          saved: 'Ваш профиль успешно обновлён!'
+        password_change: 'Если не хотите менять пароль - оставьте эти поля пустыми!'
+        form:
+          username: 'Ник'
+          name: 'Ваше имя'
+          avatar_url: 'URL вашей аватарки'
+          password: 'Новый пароль'
+          password_confirmation: 'Новый пароль ещё раз'
+          save: 'Сохранить'
+  user:
+    edit: "Редактировать профиль"
   question:
     one: "%{count} вопрос"
     few: "%{count} вопроса"

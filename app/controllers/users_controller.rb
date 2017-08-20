@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :load_user, except: [:index, :create, :new]
+
   def index
     @users = User.all
   end
@@ -18,17 +20,27 @@ class UsersController < ApplicationController
   end
 
   def edit
+  end
 
+  def update
+    if @user.update(user_params)
+      redirect_to user_path(@user), notice: I18n.t('pages.users.edit.user.saved')
+    else
+      render 'edit'
+    end
   end
 
   def show
-    @user = User.find params[:id]
     @questions = @user.questions.order(created_at: :desc)
 
     @new_question = @user.questions.build
   end
 
   private
+
+  def load_user
+    @user ||= User.find params[:id]
+  end
 
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation,
