@@ -1,43 +1,37 @@
 class UsersController < ApplicationController
   def index
-    @users = [
-      User.new(
-        id: 1,
-        name: 'Alex',
-        username: 'alexklimenkov',
-        avatar_url: 'https://secure.gravatar.com/avatar/1bf90aaef27ad96e7ef87738cb9988cd?s=200'
-      ),
-      User.new(
-        id: 2,
-        name: 'David',
-        username: 'filosof'
-      )
-    ]
+    @users = User.all
   end
 
   def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new(user_params)
+
+    if @user.save
+      redirect_to root_url, notice: I18n.t('pages.users.new.user.created')
+    else
+      render 'new'
+    end
   end
 
   def edit
+
   end
 
   def show
-    @questions = [
-      Question.new(text: 'Как дела?', answer: 'Хорошо!', created_at: Date.parse('14.08.2017')),
-      Question.new(text: 'Как дела?', answer: 'Хорошо!', created_at: Date.parse('14.08.2017')),
-      Question.new(text: 'Как дела?', answer: 'Хорошо!', created_at: Date.parse('14.08.2017')),
-      Question.new(text: 'Как дела?', answer: 'Хорошо!', created_at: Date.parse('14.08.2017')),
-      Question.new(text: 'В чем смысл жизни?', created_at: Date.parse('14.08.2017')),
-      Question.new(text: 'В чем смысл жизни?', created_at: Date.parse('14.08.2017'))
-    ]
+    @user = User.find params[:id]
+    @questions = @user.questions.order(created_at: :desc)
 
-    @user = User.new(
-      username: 'alexklimenkov',
-      name: 'Александр',
-      avatar_url: 'https://secure.gravatar.com/avatar/1bf90aaef27ad96e7ef87738cb9988cd?s=200',
-      questions: @questions
-    )
+    @new_question = @user.questions.build
+  end
 
-    @new_question = Question.new
+  private
+
+  def user_params
+    params.require(:user).permit(:email, :password, :password_confirmation,
+                                 :name, :username, :avatar_url)
   end
 end

@@ -6,6 +6,18 @@ ru:
     users:
       index:
         title: "Наши пользователи"
+      new:
+        title: "Присоединяйся к нам!"
+        user:
+          created: 'Пользователь успешно зарегистрирован!'
+          not_created: 'Ошибка регистрации пользователя'
+        form:
+          email: 'Логин (email)'
+          username: 'Никнейм'
+          name: 'Имя'
+          password: 'Пароль'
+          password_confirmation: 'Пароль ещё раз'
+          register: 'Зарегистрироваться'
   question:
     one: "%{count} вопрос"
     few: "%{count} вопроса"

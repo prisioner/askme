@@ -1,2 +1,36 @@
-h1 Users#new
-p Find me in app/views/users/new.html.slim
+.container.content-wrapper.buffer-both
+  h1.title-medium = t('pages.users.new.title')
+
+  .column-1-2
+    .form
+      =form_for @user do |f|
+
+        -if @user.errors.any?
+          .form-errors
+            ul
+              -for message in @user.errors.full_messages
+                li.form-error-message =message
+
+
+        .form-field
+          =f.label :email, t('pages.users.new.form.email'), class: 'form-label'
+          =f.text_field :email, class: 'form-text-field'
+
+        .form-field
+          =f.label :username, t('pages.users.new.form.username'), class: 'form-label'
+          =f.text_field :username, class: 'form-text-field'
+
+        .form-field
+          =f.label :name, t('pages.users.new.form.name'), class: 'form-label'
+          =f.text_field :name, class: 'form-text-field'
+
+        .form-field
+          =f.label :password, t('pages.users.new.form.password'), class: 'form-label'
+          =f.password_field :password, class: 'form-text-field'
+
+        .form-field
+          =f.label :password_confirmation, t('pages.users.new.form.password_confirmation'), class: 'form-label'
+          =f.password_field :password_confirmation, class: 'form-text-field'
+
+        .form-action
+          =f.submit t('pages.users.new.form.register'), class: 'button button-small button-dark'

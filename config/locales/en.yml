@@ -6,6 +6,18 @@ en:
     users:
       index:
         title: "Our users"
+      new:
+        title: "Join us!"
+        user:
+          created: 'User successfully registered!'
+          not_created: 'User registration error'
+        form:
+          email: 'Login (email)'
+          username: 'Username'
+          name: 'Name'
+          password: 'Password'
+          password_confirmation: 'Password confirmation'
+          register: 'Register now'
   question:
     one: "%{count} question"
     other: "%{count} questions"

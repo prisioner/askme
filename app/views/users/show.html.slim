@@ -5,7 +5,7 @@
     = image_tag user_avatar(@user), class: "user-image", alt: user_nickname(@user)
 
   h2.title-small.buffer-top = user_nickname(@user)
-  p.text-small.buffer-bottom = t('question', count: @user.questions.size)
+  p.text-small.buffer-bottom = t('question', count: questions_count(@user))
 
   .user-ask-button.container.text-center
     = link_to t('question.askme'), '', class: "button button-light", id: "ask-button"

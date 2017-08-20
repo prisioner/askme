@@ -10,4 +10,8 @@ module ApplicationHelper
   def user_nickname(user)
     "@#{user.username}"
   end
+
+  def questions_count(user)
+    user.questions.select(&:persisted?).size
+  end
 end
