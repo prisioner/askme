@@ -41,6 +41,9 @@ ru:
       edit:
         title: "Править профиль"
         profile_preview: "Превью"
+        delete_account: "Удалить аккаунт"
+        delete_account_confirmation: "Вы точно хотите удалить аккаунт?"
+        account_deleted: "Аккаунт удален :("
         user:
           saved: 'Ваш профиль успешно обновлён!'
         password_change: 'Если не хотите менять пароль - оставьте эти поля пустыми!'

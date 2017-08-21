@@ -24,8 +24,22 @@
   color: #fff;
 }
 
+.button-red {
+  background: #db7093;
+  color: #fff;
+}
+
+.button-red:hover {
+  background: #8b0000;
+  transition: all ease-out 0.3s;
+}
+
 .button-small {
   font-size: 15px;
   line-height: 15px;
   padding: 7px 15px;
+}
+
+.button-right {
+  float: right;
 }

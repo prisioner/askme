@@ -1,9 +1,19 @@
 class UsersController < ApplicationController
   before_action :load_user, except: [:index, :create, :new]
-  before_action :authorize_user, only: [:edit, :update]
+  before_action :authorize_user, only: [:edit, :update, :destroy]
 
   def index
     @users = User.all
+  end
+
+  def show
+    @questions = @user.questions.order(created_at: :desc)
+
+    @questions_count = @questions.count
+    @answers_count = @questions.where.not(answer: nil).count
+    @unanswered_count = @questions_count - @answers_count
+
+    @new_question = @user.questions.build
   end
 
   def new
@@ -35,14 +45,10 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-    @questions = @user.questions.order(created_at: :desc)
-
-    @questions_count = @questions.count
-    @answers_count = @questions.where.not(answer: nil).count
-    @unanswered_count = @questions_count - @answers_count
-
-    @new_question = @user.questions.build
+  def destroy
+    @user.destroy
+    session[:user_id] = nil
+    redirect_to root_path, notice: I18n.t('pages.users.edit.account_deleted')
   end
 
   private
