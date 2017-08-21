@@ -7,15 +7,20 @@ end
 
 
 gem 'rails', '~> 5.1.2'
-gem 'sqlite3'
 gem 'puma', '~> 3.7'
+gem 'uglifier'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'slim-rails'
 gem 'rails-i18n', '~> 5.0.0'
 gem 'strip_attributes'
 
+group :production do
+  gem 'pg'
+end
+
 group :development, :test do
+  gem 'sqlite3'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
