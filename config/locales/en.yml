@@ -52,9 +52,15 @@ en:
           save: 'Save'
   user:
     edit: "Edit profile"
+  unanswered:
+    one: 'unanswered'
+    other: 'unanswered'
+  answer:
+    one: 'answer'
+    other: 'answers'
   question:
-    one: "%{count} question"
-    other: "%{count} questions"
+    one: "question"
+    other: "questions"
     ask: "Ask question"
     askme: "Ask me"
     for: "Your question for"

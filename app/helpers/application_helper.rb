@@ -11,10 +11,6 @@ module ApplicationHelper
     "@#{user.username}"
   end
 
-  def questions_count(user)
-    user.questions.select(&:persisted?).size
-  end
-
   def is_current_user?(user)
     current_user.present? && current_user == user
   end

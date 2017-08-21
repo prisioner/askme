@@ -11,7 +11,7 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to user_path(@question.user), notice: I18n.t('pages.users.show.question.created')
     else
-      render :new
+      render :edit
     end
   end
 
