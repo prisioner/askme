@@ -1,11 +1,11 @@
-.user-header.text-center
+.user-header.text-center style=user_header_style(@user)
   h1.title-medium = @user.name
 
   -if is_current_user?(@user)
     .buffer-both
-      = link_to t('user.edit'), edit_user_path(@user)
+      = link_to t('user.edit'), edit_user_path(@user), style: "color: #{user_text_color(@user)}"
 
-  .user-image-div
+  .user-image-div style="border-color: #{user_border_color(@user)}"
     = image_tag user_avatar(@user), class: "user-image", alt: user_nickname(@user)
 
   h2.title-small.buffer-top = user_nickname(@user)

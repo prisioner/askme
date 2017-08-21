@@ -4,5 +4,5 @@
 
   - @users.each do |user|
     .users-list-item
-      .user-image-div.user-image-div-small
+      .user-image-div.user-image-div-small style="border-color: #{user_border_color(user)}"
         = link_to image_tag(user_avatar(user), class: 'user-image', title: user_nickname(user)), user_path(user)

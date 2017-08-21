@@ -24,6 +24,14 @@
   margin-top: 40px;
 }
 
+.buffer-left {
+  margin-left: 20px;
+}
+
+.buffer-left-large {
+  margin-left: 40px;
+}
+
 .container {
   max-width: 960px;
   margin-left: auto;

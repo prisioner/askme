@@ -40,13 +40,18 @@ ru:
           register: 'Зарегистрироваться'
       edit:
         title: "Править профиль"
+        profile_preview: "Превью"
         user:
           saved: 'Ваш профиль успешно обновлён!'
         password_change: 'Если не хотите менять пароль - оставьте эти поля пустыми!'
+        color_preferences: 'Настройка цветов профиля'
         form:
           username: 'Ник'
           name: 'Ваше имя'
           avatar_url: 'URL вашей аватарки'
+          avatar_bg_color: 'Цвет фона'
+          avatar_border_color: 'Цвет рамки'
+          profile_text_color: 'Цвет текста'
           password: 'Новый пароль'
           password_confirmation: 'Новый пароль ещё раз'
           save: 'Сохранить'

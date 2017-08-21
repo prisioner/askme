@@ -1,7 +1,7 @@
 .container.content-wrapper.buffer-both
-  h1.title-medium = t('pages.users.edit.title')
 
   .column-1-2
+    h1.title-medium = t('pages.users.edit.title')
     .form
       = form_for @user do |f|
 
@@ -23,6 +23,19 @@
           = f.label :avatar_url, t('pages.users.edit.form.avatar_url'), class: 'form-label'
           = f.text_field :avatar_url, class: 'form-text-field'
 
+        = f.label t('pages.users.edit.color_preferences'), class: 'form-label'
+        .form-field
+          = f.label :avatar_bg_color, t('pages.users.edit.form.avatar_bg_color'), class: 'form-label-color'
+          = f.color_field :avatar_bg_color, value: "#{user_bg_color(@user)}", class: 'form-color-field'
+
+        .form-field
+          = f.label :avatar_border_color, t('pages.users.edit.form.avatar_border_color'), class: 'form-label-color'
+          = f.color_field :avatar_border_color, value: "#{user_border_color(@user)}", class: 'form-color-field'
+
+        .form-field
+          = f.label :profile_text_color, t('pages.users.edit.form.profile_text_color'), class: 'form-label-color'
+          = f.color_field :profile_text_color, value: "#{user_text_color(@user)}", class: 'form-color-field'
+
         .buffer-top-large.buffer-bottom = t('pages.users.edit.password_change')
 
         .form-field
@@ -35,3 +48,14 @@
 
         .form-action
           = f.submit t('pages.users.edit.form.save'), class: 'button button-small button-dark'
+
+
+  .column-1-3.buffer-left-large
+    h1.title-medium = t('pages.users.edit.profile_preview')
+    .user-header.text-center style=user_header_style(@user)
+      h1.title-medium id="user_name_sandbox" = @user.name
+
+      .user-image-div style="border-color: #{user_border_color(@user)}"
+        = image_tag user_avatar(@user), class: "user-image", alt: user_nickname(@user)
+
+      h2.title-small.buffer-top id="user_nickname_sandbox" = user_nickname(@user)

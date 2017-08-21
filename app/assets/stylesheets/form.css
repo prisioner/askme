@@ -11,6 +11,17 @@
   margin-bottom: 5px;
 }
 
+.form-label-color {
+  display: inline-block;
+  width: 130px;
+  margin-bottom: 5px;
+}
+
+.form-color-field {
+  width: 50px;
+  height: 25px;
+}
+
 .form-textarea {
   min-height: 100px;
 }

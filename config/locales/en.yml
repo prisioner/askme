@@ -40,13 +40,18 @@ en:
           register: 'Register now'
       edit:
         title: "Edit profile"
+        profile_preview: "Profile preview"
         user:
           saved: 'Your profile successfully updated!'
         password_change: 'Leave fields blank to keep your current password'
+        color_preferences: 'Profile colors'
         form:
           username: 'Username'
           name: 'Your name'
           avatar_url: 'Avatar URL'
+          avatar_bg_color: 'Background color'
+          avatar_border_color: 'Border color'
+          profile_text_color: 'Text color'
           password: 'New password'
           password_confirmation: 'Confirm new password'
           save: 'Save'
