@@ -36,6 +36,9 @@
           = f.label :profile_text_color, t('pages.users.edit.form.profile_text_color'), class: 'form-label-color'
           = f.color_field :profile_text_color, value: "#{user_text_color(@user)}", class: 'form-color-field'
 
+        .form-field
+          button id='user_reset_colors' class='button button-small button-dark' = t('pages.users.edit.form.reset_colors')
+
         .buffer-top-large.buffer-bottom = t('pages.users.edit.password_change')
 
         .form-field

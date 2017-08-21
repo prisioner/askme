@@ -52,6 +52,7 @@ en:
           avatar_bg_color: 'Background color'
           avatar_border_color: 'Border color'
           profile_text_color: 'Text color'
+          reset_colors: 'Reset to default colors'
           password: 'New password'
           password_confirmation: 'Confirm new password'
           save: 'Save'

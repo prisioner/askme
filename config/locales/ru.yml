@@ -52,6 +52,7 @@ ru:
           avatar_bg_color: 'Цвет фона'
           avatar_border_color: 'Цвет рамки'
           profile_text_color: 'Цвет текста'
+          reset_colors: 'Вернуть цвета по умолчанию'
           password: 'Новый пароль'
           password_confirmation: 'Новый пароль ещё раз'
           save: 'Сохранить'
