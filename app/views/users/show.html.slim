@@ -1,8 +1,9 @@
 .user-header.text-center
   h1.title-medium = @user.name
 
-  .buffer-both
-    = link_to t('user.edit'), edit_user_path(@user)
+  -if @user == current_user
+    .buffer-both
+      = link_to t('user.edit'), edit_user_path(@user)
 
   .user-image-div
     = image_tag user_avatar(@user), class: "user-image", alt: user_nickname(@user)

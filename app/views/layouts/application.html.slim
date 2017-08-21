@@ -15,6 +15,8 @@ html
         .header-logo
           h1.header-title = link_to t('main.header-title'), root_path
 
+        = render 'layouts/user_menu'
+
     .content
       .container
         -if flash.any?

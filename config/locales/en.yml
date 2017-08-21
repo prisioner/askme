@@ -2,12 +2,28 @@ en:
   main:
     title: "Good questions"
     header-title: "Good questions"
+    access_denied: "Access denied"
+    logged_out: "You are logged out. Come to us again"
+    usermenu:
+      sign_up: "Sign Up"
+      log_in: "Sign In"
+      log_out: "Log Out"
   pages:
+    sessions:
+      new:
+        title: "Sign In"
+        form:
+          email: "Login (email)"
+          password: "Password"
+          sign_in: "Sign In"
+        success: "Signed in successfully!"
+        error: "Invalid email or password"
     users:
       index:
         title: "Our users"
       new:
         title: "Join us!"
+        already_logged_in: 'You are already signed in!'
         user:
           created: 'User successfully registered!'
         form:

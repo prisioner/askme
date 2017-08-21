@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
 
+  helper_method :current_user
+
   def set_locale
     I18n.locale =
       extract_locale_from_subdomain ||
@@ -18,5 +20,15 @@ class ApplicationController < ActionController::Base
   def extract_locale_from_subdomain
     parsed_locale = request.subdomains.first
     I18n.available_locales.map(&:to_s).include?(parsed_locale) ? parsed_locale : nil
+  end
+
+  private
+
+  def current_user
+    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
+  end
+
+  def reject_user
+    redirect_to root_path, alert: I18n.t('main.access_denied')
   end
 end

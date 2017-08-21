@@ -1,0 +1,16 @@
+.container.content-wrapper.buffer-both
+  h1.title-medium = t('pages.sessions.new.title')
+
+  .column-1-2
+    .form
+      = form_tag sessions_path do
+        .form-fiels
+          = label_tag :email, t('pages.sessions.new.form.email'), class: 'form-label'
+          = text_field_tag :email, params[:email], class: 'form-text-field'
+
+        .form-fiels
+          = label_tag :password, t('pages.sessions.new.form.password'), class: 'form-label'
+          = password_field_tag :password, '', class: 'form-text-field'
+
+        .form-action
+          = submit_tag t('pages.sessions.new.form.sign_in'), class: 'button button-dark button-small'

@@ -2,12 +2,28 @@ ru:
   main:
     title: "Хорошие вопросы"
     header-title: "Хорошие вопросы"
+    access_denied: "В доступе отказано"
+    logged_out: "Выход выполнен. Приходите к нам ещё!"
+    usermenu:
+      sign_up: "Зарегистрироваться"
+      log_in: "Войти"
+      log_out: "Выйти"
   pages:
+    sessions:
+      new:
+        title: "Войти на сайт"
+        form:
+          email: "Логин (email)"
+          password: "Пароль"
+          sign_in: "Войти"
+        success: "Вы успешно вошли в систему!"
+        error: "Неправильный email или пароль"
     users:
       index:
         title: "Наши пользователи"
       new:
         title: "Присоединяйся к нам!"
+        already_logged_in: 'Вы уже вошли в систему!'
         user:
           created: 'Пользователь успешно зарегистрирован!'
         form:
