@@ -74,6 +74,7 @@ en:
     askme: "Ask me"
     for: "Your question for"
     confirm_delete: 'Are you sure you want to delete the question?'
+    anonymous: "Anonymous"
     form:
       text: "Question"
       answer: "Answer"

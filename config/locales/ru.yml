@@ -80,6 +80,7 @@ ru:
     askme: "Спроси меня"
     for: "Ваш вопрос для"
     confirm_delete: 'Точно удалить вопрос?'
+    anonymous: "Аноним"
     form:
       text: "Вопрос"
       answer: "Ответ"

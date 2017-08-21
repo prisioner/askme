@@ -10,6 +10,11 @@
       .question-answer.text-lead
         = question.answer if question.answer.present?
 
+    .question-author
+      -if question.author.present?
+        = link_to user_nickname(question.author), user_path(question.author)
+      -else
+        i = t('question.anonymous')
     .question-date
       = I18n.l(question.created_at, format: :short)
 

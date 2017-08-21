@@ -5,6 +5,7 @@ class User < ApplicationRecord
   DIGEST = OpenSSL::Digest::SHA256.new
 
   has_many :questions, dependent: :destroy
+  has_many :questions_asked, class_name: 'Question', foreign_key: 'author_id', dependent: :nullify
 
   validates :username, :email, presence: true
   validates :username, :email, uniqueness: true
