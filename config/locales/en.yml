@@ -19,6 +19,11 @@ en:
         success: "Signed in successfully!"
         error: "Invalid email or password"
     users:
+      show:
+        question:
+          created: "Question added"
+          updated: "Question edited"
+          destroyed: "Question deleted :("
       index:
         title: "Our users"
       new:
@@ -53,6 +58,13 @@ en:
     ask: "Ask question"
     askme: "Ask me"
     for: "Your question for"
+    confirm_delete: 'Are you sure you want to delete the question?'
+    form:
+      text: "Question"
+      answer: "Answer"
+      save: "Save"
+      or: " or "
+      back: "back"
   errors:
     attributes:
        username:

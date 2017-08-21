@@ -1,7 +1,7 @@
 .user-header.text-center
   h1.title-medium = @user.name
 
-  -if @user == current_user
+  -if is_current_user?(@user)
     .buffer-both
       = link_to t('user.edit'), edit_user_path(@user)
 

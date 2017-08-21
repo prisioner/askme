@@ -14,4 +14,12 @@ module ApplicationHelper
   def questions_count(user)
     user.questions.select(&:persisted?).size
   end
+
+  def is_current_user?(user)
+    current_user.present? && current_user == user
+  end
+
+  def fa_icon(icon_class)
+    content_tag 'span', '', class: "fa fa-#{icon_class}"
+  end
 end
