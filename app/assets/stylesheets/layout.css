@@ -19,6 +19,10 @@ a {
   float: right;
 }
 
+.header-nav a + a {
+  margin-left: 5px;
+}
+
 .header-logo {
   float: left;
 }
