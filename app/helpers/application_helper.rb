@@ -1,10 +1,6 @@
 module ApplicationHelper
   def user_avatar(user)
-    if user.avatar_url.present?
-      user.avatar_url
-    else
-      asset_path 'avatar.jpg'
-    end
+    user.avatar_url || asset_path('avatar.jpg')
   end
 
   def user_nickname(user)
@@ -20,27 +16,15 @@ module ApplicationHelper
   end
 
   def user_bg_color(user)
-    if user.avatar_bg_color.present?
-      user.avatar_bg_color
-    else
-      "#005a55"
-    end
+    user.avatar_bg_color || "#005a55"
   end
 
   def user_border_color(user)
-    if user.avatar_border_color.present?
-      user.avatar_border_color
-    else
-      "#00b6ad"
-    end
+    user.avatar_border_color || "#00b6ad"
   end
 
   def user_text_color(user)
-    if user.profile_text_color.present?
-      user.profile_text_color
-    else
-      "#ffffff"
-    end
+    user.profile_text_color || "#ffffff"
   end
 
   def user_header_style(user)
