@@ -12,7 +12,6 @@
 //
 //= require jquery2
 //= require jquery_ujs
-//= require rails-ujs
 //= require_tree .
 
 $(function(){
