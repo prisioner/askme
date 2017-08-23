@@ -10,7 +10,7 @@ class QuestionsController < ApplicationController
     @question.author = current_user if current_user
 
     if @question.save
-      redirect_to user_path(@question.user), notice: I18n.t('pages.users.show.question.created')
+      flash[:notice] = I18n.t('pages.users.show.question.created')
     else
       render :edit
     end

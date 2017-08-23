@@ -1,0 +1,3 @@
+$(".questions-list").prepend("<%= j render 'questions/question', question: @question %>");
+$(".user-statistics").html("<%= j render 'users/user_statistics', user: @question.user %>");
+$("#question_text").val('');

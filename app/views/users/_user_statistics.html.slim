@@ -1,0 +1,15 @@
+- questions_count = user.questions.count
+- answers_count = user.questions.where.not(answer: nil).count
+- unanswered_count = questions_count - answers_count
+
+.column-1-3
+  h1.title-small = questions_count
+  p = t('question', count: questions_count)
+
+.column-1-3
+  h1.title-small = answers_count
+  p = t('answer', count: answers_count)
+
+.column-1-3
+  h1.title-small = unanswered_count
+  p = t('unanswered', count: unanswered_count)
