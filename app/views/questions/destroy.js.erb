@@ -1,0 +1,2 @@
+$("#question_<%= @question.id %>").remove();
+$('.user-statistics').html("<%= j render 'users/user_statistics', user: @question.user %>");

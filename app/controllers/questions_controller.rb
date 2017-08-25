@@ -31,7 +31,10 @@ class QuestionsController < ApplicationController
     user = @question.user
     @question.destroy
 
-    redirect_to user_path(user), notice: I18n.t('pages.users.show.question.destroyed')
+    respond_to do |f|
+      f.html { redirect_to user_path(user), notice: I18n.t('pages.users.show.question.destroyed') }
+      f.js
+    end
   end
 
   private
