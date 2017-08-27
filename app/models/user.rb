@@ -22,6 +22,8 @@ class User < ApplicationRecord
   # may include only latin letters, numbers and underscores
   validates :username, format: { with: /\A[a-z\d_]*\Z/ }
 
+  validates :avatar_bg_color, :avatar_border_color, :profile_text_color, format: { with: /\A#[a-f\d]{6}\Z/ }
+
   attr_accessor :password
 
   validates_presence_of :password, on: :create
