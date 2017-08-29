@@ -10,7 +10,7 @@ class Tag < ApplicationRecord
   private
 
   def downcase_name
-    name.downcase! if name.present?
+    self.name = name.mb_chars.downcase.to_s if name.present?
   end
 
   def generate_alias
