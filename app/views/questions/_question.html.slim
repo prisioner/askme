@@ -1,14 +1,14 @@
 - question ||= nil
 - action_icon = question.answer.blank? ? 'reply' : 'pencil'
 
-.question
+.question id="question_#{question.id}"
   .question-content
     .question-text.text-lead
-      = question.text
+      = fill_text_with_tag_links(question.text, question.tags)
 
     - if question.answer.present?
       .question-answer.text-lead
-        = question.answer if question.answer.present?
+        = fill_text_with_tag_links(question.answer, question.tags) if question.answer.present?
 
     .question-author
       -if question.author.present?

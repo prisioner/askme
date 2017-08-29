@@ -91,3 +91,11 @@ ru:
     attributes:
        username:
          invalid: "может содержать только латинские буквы, цифры и знак подчеркивания"
+
+  tags:
+    show:
+      questions_with_tag: "Вопросы с тегом: "
+  questions:
+    tagged_question:
+      question_for: 'Вопрос для '
+      jump_to_question: '(перейти к вопросу)'

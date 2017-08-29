@@ -1,0 +1,7 @@
+hr
+.tag-header
+  h2.title-medium = "#{t('.questions_with_tag')} #{@tag.name}"
+.user-questions.buffer-both
+  .questions-list
+    - @questions.each do |question|
+      = render 'questions/tagged_question', question: question

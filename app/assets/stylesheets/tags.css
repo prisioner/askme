@@ -1,0 +1,22 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+.tag-header {
+  padding: 10px;
+  background: #005a55;
+  color: white;
+}
+
+.tagged-question-link .question:hover {
+  background: lightgray;
+}
+
+.tagged-question {
+  padding: 10px;
+}
+
+.tag-link {
+  color: blue;
+}

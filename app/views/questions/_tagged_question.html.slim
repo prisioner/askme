@@ -1,0 +1,6 @@
+.tagged-question
+  = t('.question_for')
+  = link_to user_nickname(question.user), user_path(question.user)
+  = ' '
+  = link_to t('.jump_to_question'), "#{user_path(question.user)}#question_#{question.id}"
+  = render(partial: 'questions/question', object: question)
