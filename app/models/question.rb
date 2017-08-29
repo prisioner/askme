@@ -18,7 +18,7 @@ class Question < ApplicationRecord
     answer_hashtags = self.answer.to_s.scan(TAG_REGEX)
     hashtags = text_hashtags | answer_hashtags
 
-    self.tags = hashtags.map { |tag| Tag.find_or_create_by(name: tag) }
+    self.tags = hashtags.map { |tag| Tag.find_or_create_by(name: tag.mb_chars.downcase.to_s) }
   end
 
   def destroy_unused_tags
