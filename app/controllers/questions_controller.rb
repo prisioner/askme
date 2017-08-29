@@ -32,19 +32,20 @@ class QuestionsController < ApplicationController
   end
 
   private
-    def authorize_user
-      reject_user unless @question.user == current_user
-    end
 
-    def load_question
-      @question = Question.find(params[:id])
-    end
+  def authorize_user
+    reject_user unless @question.user == current_user
+  end
 
-    def question_params
-      if current_user.present? && params[:question][:user_id].to_i == current_user.id
-        params.require(:question).permit(:user_id, :text, :answer)
-      else
-        params.require(:question).permit(:user_id, :text)
-      end
+  def load_question
+    @question = Question.find(params[:id])
+  end
+
+  def question_params
+    if current_user.present? && params[:question][:user_id].to_i == current_user.id
+      params.require(:question).permit(:user_id, :text, :answer)
+    else
+      params.require(:question).permit(:user_id, :text)
     end
+  end
 end
