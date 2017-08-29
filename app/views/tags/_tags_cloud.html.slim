@@ -1,0 +1,20 @@
+javascript:
+  $(document).ready(function() {
+    var words = [];
+
+    $('.tags').each(function() {
+      words.push({
+        text: $(this).data('text'),
+        weight: $(this).data('weight'),
+        link: $(this).data('link')
+      });
+    });
+
+    $("#tags_cloud").jQCloud(words, {height: 350});
+  });
+
+- tags.each do |tag|
+  = content_tag 'div', '', class: 'tags',
+          data: {text: tag.name, weight: tag.questions.size, link: tag_path(tag.alias)}
+
+#tags_cloud

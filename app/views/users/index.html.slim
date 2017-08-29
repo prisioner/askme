@@ -1,4 +1,4 @@
-.content-wrapper.buffer-both.text-center
+.content-wrapper.buffer-top.text-center
   .buffer-both
     h1.title-medium = t('pages.users.index.title')
 
@@ -6,3 +6,5 @@
     .users-list-item
       .user-image-div.user-image-div-small style="border-color: #{user_border_color(user)}"
         = link_to image_tag(user_avatar(user), class: 'user-image', title: user_nickname(user)), user_path(user)
+
+= render 'tags/tags_cloud', tags: @tags

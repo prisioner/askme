@@ -29,6 +29,9 @@
  *= require questions
  *= require tags
  *
+ * Подключаем гем для облака тегов
+ *= require jqcloud
+ *
  * Подключаем сам файл application.css. Если бы ниже были правила css стилей,
  * они тоже попали бы в конечный стилевой файл.
  *= require_self

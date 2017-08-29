@@ -15,6 +15,7 @@ gem 'slim-rails'
 gem 'rails-i18n', '~> 5.0.0'
 gem 'strip_attributes'
 gem 'rails_12factor'
+gem 'jqcloud-rails'
 
 group :production do
   gem 'pg'
