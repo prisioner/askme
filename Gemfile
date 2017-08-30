@@ -16,13 +16,9 @@ gem 'rails-i18n', '~> 5.0.0'
 gem 'strip_attributes'
 gem 'rails_12factor'
 gem 'jqcloud-rails'
-
-group :production do
-  gem 'pg'
-end
+gem 'pg'
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
