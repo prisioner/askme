@@ -1,4 +1,7 @@
 class Tag < ApplicationRecord
+  include PgSearch
+  pg_search_scope :search_by_name, against: :name, using: [:trigram]
+
   has_and_belongs_to_many :questions
 
   validates :name, presence: true, uniqueness: true, format: { with: TAG_REGEX }

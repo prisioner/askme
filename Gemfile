@@ -17,6 +17,7 @@ gem 'strip_attributes'
 gem 'rails_12factor'
 gem 'jqcloud-rails'
 gem 'pg'
+gem 'pg_search'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
