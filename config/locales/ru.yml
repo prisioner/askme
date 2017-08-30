@@ -33,6 +33,7 @@ ru:
   tags:
     show:
       questions_with_tag: 'Вопросы с тегом: '
+      see_also: 'Вопросы с похожими тегами:'
 
   users:
     edit:

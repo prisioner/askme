@@ -7,3 +7,12 @@ hr
   .questions-list
     - @questions.each do |question|
       = render 'questions/tagged_question', question: question
+
+- if @linked_tags_questions.any?
+  hr
+  .tag-header
+    h2.title-medium = t('.see_also')
+  .user-questions.buffer-both
+    .questions-list
+      - @linked_tags_questions.each do |question|
+        = render 'questions/tagged_question', question: question

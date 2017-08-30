@@ -33,6 +33,7 @@ en:
   tags:
     show:
       questions_with_tag: 'Questions tagged with: '
+      see_also: 'See also:'
 
   users:
     edit:
