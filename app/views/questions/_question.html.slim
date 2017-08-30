@@ -14,7 +14,7 @@
       -if question.author.present?
         = link_to user_nickname(question.author), user_path(question.author)
       -else
-        i = t('question.anonymous')
+        i = t('.anonymous')
     .question-date
       = I18n.l(question.created_at, format: :short)
 
@@ -22,4 +22,4 @@
     .question-actions
       = link_to fa_icon(action_icon), edit_question_path(question)
       = link_to fa_icon('trash-o'), question_path(question),
-                method: :delete, data: {confirm: I18n.t('question.confirm_delete')}
+                method: :delete, data: {confirm: t('.confirm_destroy')}

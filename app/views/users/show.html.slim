@@ -3,7 +3,7 @@
 
   -if is_current_user?(@user)
     .buffer-both
-      = link_to t('user.edit'), edit_user_path(@user), style: "color: #{user_text_color(@user)}"
+      = link_to t('.edit'), edit_user_path(@user), style: "color: #{user_text_color(@user)}"
 
   .user-image-div style="border-color: #{user_border_color(@user)}"
     = image_tag user_avatar(@user), class: "user-image", alt: user_nickname(@user)
@@ -12,20 +12,20 @@
 
 .user-details
   .user-ask-button.container.text-center
-    = link_to t('question.askme'), '', class: "button button-light", id: "ask-button"
+    = link_to t('.ask_me'), '', class: "button button-light", id: "ask-button"
 
   .user-statistics.container.text-center
     .column-1-3
       h1.title-small = @questions_count
-      p = t('question', count: @questions_count)
+      p = t('.question', count: @questions_count)
 
     .column-1-3
       h1.title-small = @answers_count
-      p = t('answer', count: @answers_count)
+      p = t('.answer', count: @answers_count)
 
     .column-1-3
       h1.title-small = @unanswered_count
-      p = t('unanswered', count: @unanswered_count)
+      p = t('.unanswered', count: @unanswered_count)
 
 
 .user-question-form-div.column-1-4.column-1-4-right id='ask-form'
@@ -34,10 +34,10 @@
       = form_for @new_question do |f|
         = f.hidden_field :user_id
         .form-field
-          = f.label :text, "#{t('question.for')} #{user_nickname(@user)}", class: "form-label"
+          = f.label :text, "#{t('.form.for')} #{user_nickname(@user)}", class: "form-label"
           = f.text_area :text, class: "form-textarea"
         .form-action
-          = f.submit t('question.ask'), class: "button button-green"
+          = f.submit t('.form.ask'), class: "button button-green"
 
 .column-3-4
   .user-questions.buffer-both

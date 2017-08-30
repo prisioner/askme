@@ -10,7 +10,7 @@ class QuestionsController < ApplicationController
     @question.author = current_user if current_user
 
     if @question.save
-      redirect_to user_path(@question.user), notice: I18n.t('pages.users.show.question.created')
+      redirect_to user_path(@question.user), notice: I18n.t('controllers.questions.created')
     else
       render :edit
     end
@@ -18,7 +18,7 @@ class QuestionsController < ApplicationController
 
   def update
     if @question.update(question_params)
-      redirect_to user_path(@question.user), notice: I18n.t('pages.users.show.question.updated')
+      redirect_to user_path(@question.user), notice: I18n.t('controllers.questions.updated')
     else
       render :edit
     end
@@ -28,7 +28,7 @@ class QuestionsController < ApplicationController
     user = @question.user
     @question.destroy
 
-    redirect_to user_path(user), notice: I18n.t('pages.users.show.question.destroyed')
+    redirect_to user_path(user), notice: I18n.t('controllers.questions.destroyed')
   end
 
   private

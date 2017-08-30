@@ -9,15 +9,15 @@
     =f.hidden_field :user_id
 
     .form-field
-      =f.label :text, t('question.form.text'), class: 'form-label'
+      =f.label :text, class: 'form-label'
       =f.text_area :text, class: 'form-textarea'
 
     -if is_current_user?(@question.user)
       .form-field
-        =f.label :answer, t('question.form.answer'), class: 'form-label'
+        =f.label :answer, class: 'form-label'
         =f.text_area :answer, class: 'form-textarea'
 
     .form-action.buffer-both
-      =f.submit t('question.form.save'), class: 'button button-dark button-small'
-      = t('question.form.or')
-      =link_to t('question.form.back'), user_path(@question.user)
+      =f.submit t('.save'), class: 'button button-dark button-small'
+      = t('.alt')
+      =link_to t('.back'), user_path(@question.user)

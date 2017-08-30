@@ -1,7 +1,7 @@
 .container.content-wrapper.buffer-both
 
   .column-1-2
-    h1.title-medium = t('pages.users.edit.title')
+    h1.title-medium = t('.title')
     .form
       = form_for @user do |f|
 
@@ -12,51 +12,51 @@
                 li.form-error-message = message
 
         .form-field
-          = f.label :username, t('pages.users.edit.form.username'), class: 'form-label'
+          = f.label :username, class: 'form-label'
           = f.text_field :username, class: 'form-text-field'
 
         .form-field
-          = f.label :name, t('pages.users.edit.form.name'), class: 'form-label'
+          = f.label :name, class: 'form-label'
           = f.text_field :name, class: 'form-text-field'
 
         .form-field
-          = f.label :avatar_url, t('pages.users.edit.form.avatar_url'), class: 'form-label'
+          = f.label :avatar_url, class: 'form-label'
           = f.text_field :avatar_url, class: 'form-text-field'
 
-        = f.label t('pages.users.edit.color_preferences'), class: 'form-label'
+        = f.label t('.form.color_preferences'), class: 'form-label'
         .form-field
-          = f.label :avatar_bg_color, t('pages.users.edit.form.avatar_bg_color'), class: 'form-label-color'
+          = f.label :avatar_bg_color, class: 'form-label-color'
           = f.color_field :avatar_bg_color, value: "#{user_bg_color(@user)}", class: 'form-color-field'
 
         .form-field
-          = f.label :avatar_border_color, t('pages.users.edit.form.avatar_border_color'), class: 'form-label-color'
+          = f.label :avatar_border_color, class: 'form-label-color'
           = f.color_field :avatar_border_color, value: "#{user_border_color(@user)}", class: 'form-color-field'
 
         .form-field
-          = f.label :profile_text_color, t('pages.users.edit.form.profile_text_color'), class: 'form-label-color'
+          = f.label :profile_text_color, class: 'form-label-color'
           = f.color_field :profile_text_color, value: "#{user_text_color(@user)}", class: 'form-color-field'
 
         .form-field
-          button id='user_reset_colors' class='button button-small button-dark' = t('pages.users.edit.form.reset_colors')
+          button id='user_reset_colors' class='button button-small button-dark' = t('.form.reset_colors')
 
-        .buffer-top-large.buffer-bottom = t('pages.users.edit.password_change')
+        .buffer-top-large.buffer-bottom = t('.form.password_change')
 
         .form-field
-          = f.label :password, t('pages.users.edit.form.password'), class: 'form-label'
+          = f.label :password, t('.form.new_password'), class: 'form-label'
           = f.password_field :password, class: 'form-text-field'
 
         .form-field
-          = f.label :password_confirmation, t('pages.users.edit.form.password_confirmation'), class: 'form-label'
+          = f.label :password_confirmation, t('.form.new_password_confirmation'), class: 'form-label'
           = f.password_field :password_confirmation, class: 'form-text-field'
 
         .form-action
-          = f.submit t('pages.users.edit.form.save'), class: 'button button-small button-dark'
-          = link_to t('pages.users.edit.delete_account'), user_path(@user), method: :delete,
-                    class: 'button button-small button-red button-right', data: {confirm: t('pages.users.edit.delete_account_confirmation')}
+          = f.submit t('.form.save'), class: 'button button-small button-dark'
+          = link_to t('.form.destroy'), user_path(@user), method: :delete,
+                    class: 'button button-small button-red button-right', data: {confirm: t('.form.confirm_destroy')}
 
 
   .column-1-3.buffer-left-large
-    h1.title-medium = t('pages.users.edit.profile_preview')
+    h1.title-medium = t('.profile_preview')
     .user-header.text-center style=user_header_style(@user)
       h1.title-medium id="user_name_sandbox" = @user.name
 

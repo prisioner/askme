@@ -29,6 +29,6 @@ class ApplicationController < ActionController::Base
   end
 
   def reject_user
-    redirect_to root_path, alert: I18n.t('main.access_denied')
+    redirect_to root_path, alert: I18n.t('controllers.app.access_denied')
   end
 end

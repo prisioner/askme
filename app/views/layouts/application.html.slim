@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title = t('main.title')
+    title = t('app.name')
 
     meta charset='utf-8'
     = csrf_meta_tags
@@ -14,7 +14,7 @@ html
     .header
       .container
         .header-logo
-          h1.header-title = link_to t('main.header-title'), root_path
+          h1.header-title = link_to t('app.name'), root_path
 
         = render 'layouts/user_menu'
 

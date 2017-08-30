@@ -1,101 +1,122 @@
 ru:
-  main:
-    title: "Хорошие вопросы"
-    header-title: "Хорошие вопросы"
-    access_denied: "В доступе отказано"
-    logged_out: "Выход выполнен. Приходите к нам ещё!"
-    usermenu:
-      sign_up: "Зарегистрироваться"
-      log_in: "Войти"
-      log_out: "Выйти"
-  pages:
-    sessions:
-      new:
-        title: "Войти на сайт"
-        form:
-          email: "Логин (email)"
-          password: "Пароль"
-          sign_in: "Войти"
-        success: "Вы успешно вошли в систему!"
-        error: "Неправильный email или пароль"
-    users:
-      show:
-        question:
-          created: "Вопрос задан"
-          updated: "Вопрос изменён"
-          destroyed: "Вопрос удалён :("
-      index:
-        title: "Наши пользователи"
-      new:
-        title: "Присоединяйся к нам!"
-        already_logged_in: 'Вы уже вошли в систему!'
-        user:
-          created: 'Пользователь успешно зарегистрирован!'
-        form:
-          email: 'Логин (email)'
-          username: 'Никнейм'
-          name: 'Имя'
-          password: 'Пароль'
-          password_confirmation: 'Пароль ещё раз'
-          register: 'Зарегистрироваться'
-      edit:
-        title: "Править профиль"
-        profile_preview: "Превью"
-        delete_account: "Удалить аккаунт"
-        delete_account_confirmation: "Вы точно хотите удалить аккаунт?"
-        account_deleted: "Аккаунт удален :("
-        user:
-          saved: 'Ваш профиль успешно обновлён!'
-        password_change: 'Если не хотите менять пароль - оставьте эти поля пустыми!'
-        color_preferences: 'Настройка цветов профиля'
-        form:
-          username: 'Ник'
-          name: 'Ваше имя'
-          avatar_url: 'URL вашей аватарки'
-          avatar_bg_color: 'Цвет фона'
-          avatar_border_color: 'Цвет рамки'
-          profile_text_color: 'Цвет текста'
-          reset_colors: 'Вернуть цвета по умолчанию'
-          password: 'Новый пароль'
-          password_confirmation: 'Новый пароль ещё раз'
-          save: 'Сохранить'
-  user:
-    edit: "Редактировать профиль"
-  answer:
-    one: "ответ"
-    few: "ответа"
-    many: "ответов"
-    other: "ответов"
-  unanswered:
-    one: "безответный"
-    few: "безответных"
-    many: "безответных"
-    other: "безответных"
-  question:
-    one: "вопрос"
-    few: "вопроса"
-    many: "вопросов"
-    other: "вопросов"
-    ask: "Задать вопрос"
-    askme: "Спроси меня"
-    for: "Ваш вопрос для"
-    confirm_delete: 'Точно удалить вопрос?'
-    anonymous: "Аноним"
-    form:
-      text: "Вопрос"
-      answer: "Ответ"
-      save: "Сохранить"
-      or: " или "
-      back: "вернуться"
-  errors:
-    attributes:
-       username:
-         invalid: "может содержать только латинские буквы, цифры и знак подчеркивания"
+  app:
+    name: 'Хорошие вопросы'
 
-  tags:
-    show:
-      questions_with_tag: "Вопросы с тегом: "
+  layouts:
+    user_menu:
+      sign_up: 'Зарегистрироваться'
+      log_in: 'Войти'
+      log_out: 'Выйти'
+
   questions:
+    form:
+      save: 'Сохранить'
+      alt: ' или '
+      back: 'вернуться'
+
+    question:
+      anonymous: 'Аноним'
+      confirm_destroy: 'Точно удалить вопрос?'
+
     tagged_question:
       question_for: 'Вопрос для '
       jump_to_question: '(перейти к вопросу)'
+
+  sessions:
+    new:
+      title: 'Войти на сайт'
+      form:
+        email: 'Логин (email)'
+        password: 'Пароль'
+        sign_in: 'Войти'
+
+  tags:
+    show:
+      questions_with_tag: 'Вопросы с тегом: '
+
+  users:
+    edit:
+      title: 'Править профиль'
+      profile_preview: 'Превью'
+      form:
+        color_preferences: 'Настройка цветов профиля'
+        reset_colors: 'Вернуть цвета по умолчанию'
+        password_change: 'Если не хотите менять пароль - оставьте эти поля пустыми!'
+        new_password: 'Новый пароль'
+        new_password_confirmation: 'Новый пароль ещё раз'
+        save: 'Сохранить'
+        destroy: 'Удалить аккаунт'
+        confirm_destroy: 'Вы точно хотите удалить аккаунт?'
+
+    index:
+      title: 'Наши пользователи'
+
+    new:
+      title: 'Присоединяйся к нам!'
+      form:
+        register: 'Зарегистрироваться'
+
+    show:
+      edit: 'Редактировать профиль'
+      ask_me: 'Спроси меня'
+      form:
+        for: 'Ваш вопрос для'
+        ask: 'Задать вопрос'
+      question:
+        one: 'вопрос'
+        few: 'вопроса'
+        many: 'вопросов'
+        other: 'вопросов'
+      answer:
+        one: 'ответ'
+        few: 'ответа'
+        many: 'ответов'
+        other: 'ответов'
+      unanswered:
+        one: 'безответный'
+        few: 'безответных'
+        many: 'безответных'
+        other: 'безответных'
+
+  controllers:
+    app:
+      access_denied: 'В доступе отказано'
+    questions:
+      created: 'Вопрос задан'
+      updated: 'Вопрос изменён'
+      destroyed: 'Вопрос удалён :('
+    sessions:
+      created: 'Вы успешно вошли в систему!'
+      create_error: 'Неправильный email или пароль'
+      destroyed: 'Выход выполнен. Приходите к нам ещё!'
+    users:
+      created: 'Пользователь успешно зарегистрирован!'
+      updated: 'Ваш профиль успешно обновлён!'
+      destroyed: 'Аккаунт удален :('
+      already_logged_in: 'Вы уже вошли в систему!'
+
+  activerecord:
+    models:
+      user: 'Пользователь'
+      question: 'Вопрос'
+
+    attributes:
+      user:
+        email: 'Логин (email)'
+        username: 'Ник'
+        name: 'Ваше имя'
+        avatar_url: 'URL вашей аватарки'
+        avatar_bg_color: 'Цвет фона'
+        avatar_border_color: 'Цвет рамки'
+        profile_text_color: 'Цвет текста'
+        password: 'Пароль'
+        password_confirmation: 'Пароль ещё раз'
+
+      question:
+        text: 'Вопрос'
+        answer: 'Ответ'
+
+  errors:
+    attributes:
+       username:
+         invalid: 'может содержать только латинские буквы, цифры и знак подчеркивания'
