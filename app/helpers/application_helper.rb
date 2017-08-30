@@ -40,7 +40,10 @@ module ApplicationHelper
     replaces = tags.map do |tag|
       {
         tag: tag.alias,
-        words: text.scan(/#{tag.name}/i)
+        # ищем точное совпадение (без учета регистра),
+        # исключаем частичное включение в другой хэштег
+        # #party #partymaker - хэштег #party должен замениться только 1 раз
+        words: text.scan(ApplicationRecord::TAG_REGEX).select { |t| tag.name == t.mb_chars.downcase.to_s }
       }
     end
 
@@ -49,8 +52,13 @@ module ApplicationHelper
     replaces.each do |replace|
       replace[:words].each do |word|
         text.gsub!(
-          word,
-          link_to(word, tag_path(replace[:tag]), class: 'tag-link')
+          # После слова должен быть символ, который не может быть частью хэштега
+          # или конец строки/текста
+          /(#{word})([^[:word:]-]|$|\z)/,
+
+          # Заменяем хэштег на ссылку и возвращаем "лишний" символ на место
+          link_to('\1', tag_path(replace[:tag]),
+                  class: 'tag-link') + '\2'
         )
       end
     end
