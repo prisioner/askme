@@ -10,12 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170830150627) do
+ActiveRecord::Schema.define(version: 20170830173214) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "pg_trgm"
   enable_extension "fuzzystrmatch"
+
+  create_table "linked_tags_tags", id: false, force: :cascade do |t|
+    t.bigint "tag_id", null: false
+    t.bigint "linked_tag_id", null: false
+    t.index ["linked_tag_id", "tag_id"], name: "index_linked_tags_tags_on_linked_tag_id_and_tag_id"
+    t.index ["tag_id", "linked_tag_id"], name: "index_linked_tags_tags_on_tag_id_and_linked_tag_id"
+  end
 
   create_table "questions", force: :cascade do |t|
     t.string "text"
