@@ -15,14 +15,15 @@ class User < ApplicationRecord
   # only one '@'
   # one or more (sub)domain groups (one or more non-'@' symbols with point at end)
   # ends with domain-zone - one or more symbols except point or '@'
-  validates :email, format: { with: /\A[^@]+@([^@\.]+\.)+[^@\.]+\Z/ }
+  validates :email, format: { with: /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/ }
 
   # at least 2 characters (maximum = 40)
   validates :username, length: { in: 2..40 }
   # may include only latin letters, numbers and underscores
-  validates :username, format: { with: /\A[a-z\d_]*\Z/ }
+  validates :username, format: { with: /\A[a-z\d_]*\z/ }
 
-  validates :avatar_bg_color, :avatar_border_color, :profile_text_color, format: { with: /\A#[a-f\d]{6}\Z/ }
+  validates :avatar_bg_color, :avatar_border_color, :profile_text_color,
+            format: { with: /\A#([a-f\d]{3}){1,2}\z/i }, allow_nil: true
 
   attr_accessor :password
 
