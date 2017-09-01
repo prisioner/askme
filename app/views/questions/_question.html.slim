@@ -16,9 +16,10 @@
       -else
         i
           = t('.anonymous')
-          = " (#{question.author_ip}" if question.author_ip
-          = ", #{city_name(question.author_ip)}" if question.author_ip && city_name(question.author_ip)
-          = ")" if question.author_ip
+          - if question.ip
+            = " (#{question.ip}"
+            = ", #{city_name(question.ip)}" if city_name(question.ip)
+            = ")"
     .question-date
       = I18n.l(question.created_at, format: :short)
 

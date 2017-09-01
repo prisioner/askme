@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20170901121727) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.integer "author_id"
-    t.string "author_ip"
+    t.string "ip"
     t.index ["user_id"], name: "index_questions_on_user_id"
   end
 

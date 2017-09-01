@@ -8,7 +8,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     @question.author = current_user if current_user
-    @question.author_ip = request.remote_ip
+    @question.ip = request.remote_ip
 
     if @question.save
       redirect_to user_path(@question.user), notice: I18n.t('controllers.questions.created')
