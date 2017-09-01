@@ -14,7 +14,9 @@
       -if question.author.present?
         = link_to user_nickname(question.author), user_path(question.author)
       -else
-        i = t('.anonymous')
+        i
+          = t('.anonymous')
+          = " (#{question.author_ip})" if question.author_ip
     .question-date
       = I18n.l(question.created_at, format: :short)
 
