@@ -65,4 +65,16 @@ module ApplicationHelper
 
     text.html_safe
   end
+
+  def city_name(ip)
+    result = Geocoder.search(ip).first
+    lat = result.latitude
+    long = result.longitude
+
+    result = Geocoder.search([lat, long]).first
+
+    return if result.nil?
+
+    result.city
+  end
 end
