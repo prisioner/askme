@@ -10,6 +10,8 @@ class ApplicationController < ActionController::Base
       extract_locale_from_subdomain ||
       extract_locale_from_params ||
       I18n.default_locale
+
+    Geocoder.configure(language: I18n.locale)
   end
 
   def extract_locale_from_params

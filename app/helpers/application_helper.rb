@@ -67,7 +67,6 @@ module ApplicationHelper
   end
 
   def city_name(ip)
-    Geocoder.configure(language: I18n.locale)
     result = Geocoder.search(ip).first
     lat = result.latitude
     long = result.longitude
