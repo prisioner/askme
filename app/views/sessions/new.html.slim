@@ -3,7 +3,7 @@
 
   .column-1-2
     .form
-      = form_tag sessions_path do
+      = form_tag session_path do
         .form-fiels
           = label_tag :email, t('.form.email'), class: 'form-label'
           = email_field_tag :email, params[:email], class: 'form-text-field'

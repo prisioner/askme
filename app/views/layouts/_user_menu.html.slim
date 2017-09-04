@@ -1,7 +1,7 @@
 .header-nav
   -if current_user
     = link_to user_nickname(current_user), user_path(current_user), class: 'button button-light button-small'
-    = link_to t('.log_out'), log_out_path, class: 'button button-light button-small'
+    = link_to t('.log_out'), session_path, method: :delete, class: 'button button-light button-small'
   -else
-    = link_to t('.sign_up'), sign_up_path, class: 'button button-light button-small'
-    = link_to t('.log_in'), log_in_path, class: 'button button-light button-small'
+    = link_to t('.sign_up'), new_user_path, class: 'button button-light button-small'
+    = link_to t('.log_in'), new_session_path, class: 'button button-light button-small'
