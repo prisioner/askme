@@ -115,3 +115,7 @@ en:
     attributes:
        username:
          invalid: 'may include only latin letters, digits or underscores'
+
+  recaptcha:
+    errors:
+      verification_failed: "Please, confirm that you're a human :)"

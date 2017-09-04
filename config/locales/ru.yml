@@ -121,3 +121,7 @@ ru:
     attributes:
        username:
          invalid: 'может содержать только латинские буквы, цифры и знак подчеркивания'
+
+  recaptcha:
+    errors:
+      verification_failed: "Пожалуйста, подтвердите, что вы не робот :)"

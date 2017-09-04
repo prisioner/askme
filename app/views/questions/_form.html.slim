@@ -17,6 +17,8 @@
         =f.label :answer, class: 'form-label'
         =f.text_area :answer, class: 'form-textarea'
 
+    = recaptcha_tags unless current_user.present?
+
     .form-action.buffer-both
       =f.submit t('.save'), class: 'button button-dark button-small'
       = t('.alt')
