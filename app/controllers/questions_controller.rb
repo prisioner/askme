@@ -18,7 +18,10 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    if @question.update(question_params)
+    use_case = UpdateQuestionTags.new
+    result = use_case.(@question, question_params)
+    
+    if result.success?
       redirect_to user_path(@question.user), notice: I18n.t('controllers.questions.updated')
     else
       render :edit
