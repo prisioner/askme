@@ -10,7 +10,7 @@ FactoryGirl.define do
     end
   end
 
-  factory :invalid_question do
+  factory :invalid_question, class: 'Question' do
     text nil
     answer nil
 
