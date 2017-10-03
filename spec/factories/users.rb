@@ -4,7 +4,7 @@ FactoryGirl.define do
     sequence(:username) { |n| "user#{n}" }
     sequence(:email) { |n| "user#{n}@example.com" }
 
-    after(:build) { |user| user.password = '12345678' }
+    after(:build) { |user| user.password = '12345678' if user.password.blank? }
   end
 
   factory :invalid_user do
