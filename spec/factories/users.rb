@@ -7,7 +7,7 @@ FactoryGirl.define do
     after(:build) { |user| user.password = '12345678' if user.password.blank? }
   end
 
-  factory :invalid_user do
+  factory :invalid_user, class: 'User' do
     username nil
     email nil
   end
