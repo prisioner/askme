@@ -31,16 +31,17 @@
 .user-question-form-div.column-1-4.column-1-4-right id='ask-form'
   .user-question-form.buffer-both
     .form
-      = form_for @new_question do |f|
+      = form_for @new_question, html: {id: 'invisible-recaptcha-form'} do |f|
         = f.hidden_field :user_id
         .form-field
           = f.label :text, "#{t('.form.for')} #{user_nickname(@user)}", class: "form-label"
           = f.text_area :text, class: "form-textarea"
 
-        = recaptcha_tags size: 'compact' unless current_user.present?
-
         .form-action
-          = f.submit t('.form.ask'), class: "button button-green"
+          -if current_user.present?
+            = f.submit t('.form.ask'), class: "button button-green"
+          -else
+            = invisible_recaptcha_tags callback: 'submitInvisibleRecaptchaForm', text: t('.form.ask'), class: 'button button-green'
 
 .column-3-4
   .user-questions.buffer-both

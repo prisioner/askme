@@ -1,5 +1,5 @@
 .form
-  =form_for @question do |f|
+  =form_for @question, html: {id: 'invisible-recaptcha-form'} do |f|
     -if @question.errors.any?
       .form-errors
         ul
@@ -17,9 +17,11 @@
         =f.label :answer, class: 'form-label'
         =f.text_area :answer, class: 'form-textarea'
 
-    = recaptcha_tags unless current_user.present?
-
     .form-action.buffer-both
-      =f.submit t('.save'), class: 'button button-dark button-small'
+      -if current_user.present?
+        = f.submit t('.save'), class: 'button button-dark button-small'
+      -else
+        = invisible_recaptcha_tags callback: 'submitInvisibleRecaptchaForm', text: t('.save'), class: 'button button-dark button-small'
+
       = t('.alt')
       =link_to t('.back'), user_path(@question.user)
