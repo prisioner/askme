@@ -52,7 +52,7 @@ GEM
     factory_bot_rails (4.8.2)
       factory_bot (~> 4.8.2)
       railties (>= 3.0.0)
-    ffi (1.9.18)
+    ffi (1.9.25)
     geocoder (1.4.4)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
@@ -216,4 +216,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.16.2
+   1.16.4
