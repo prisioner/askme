@@ -7,8 +7,8 @@ end
 
 ruby '2.7.5'
 
-gem 'rails', '~> 5.1.2'
-gem 'puma', '~> 3.7'
+gem 'rails', '~> 5.2.6'
+gem 'puma', '~> 5.6.2'
 gem 'uglifier'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
